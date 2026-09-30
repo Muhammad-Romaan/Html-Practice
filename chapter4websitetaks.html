@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | foodpanda | food and more, delivered</title>
+    <meta name="description"
+        content="We're here to help you live life the panda way. Spend more time doing what you love – we'll take care of tasty meals, fresh groceries and new flavours.">
+    <meta name="author" content="Roman Shaikh">
+    <link rel="icon" type="image/png"
+        href="https://www.foodpanda.com/wp-content/uploads/2023/02/cropped-fp-favicon-270x270.png">
+
+
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 16px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo img {
+        width: 140px;
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        list-style: none;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        font-weight: 600;
+        transition: color .2s;
+    }
+
+    nav a:hover {
+        color: #e21b70;
+    }
+
+    nav button {
+        background: #e21b70;
+        color: #fff;
+        border: none;
+        padding: 11px 22px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background .2s;
+    }
+
+    nav button:hover {
+        background: #c4105c;
+    }
+
+    /* ── HERO VIDEO WRAPPER ── */
+    .hero-video-wrap {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .hero-video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* dark overlay so text is readable */
+    .hero-video-wrap::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.15) 60%, transparent 100%);
+    }
+
+    .hero-headline {
+        position: absolute;
+        top: 50%;
+        left: 80px;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 78px;
+        font-weight: 900;
+        line-height: 1.05;
+        z-index: 10;
+        max-width: 680px;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ── MAIN ── */
+    main {
+        position: relative;
+    }
+
+    /* shared container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 60px;
+    }
+
+    /* ── INTRO SECTION ── */
+    .intro-section {
+        padding: 90px 0 60px;
+    }
+
+    .intro-section h1 {
+        font-size: 44px;
+        font-weight: 800;
+        color: #222;
+        line-height: 1.25;
+        margin-bottom: 0;
+    }
+
+    /* ── FULL-WIDTH IMAGES ── */
+    .full-img {
+        width: 100%;
+        max-width: 1200px;
+        display: block;
+        margin: 50px auto;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+
+    /* ── CONTENT BLOCK (text + button rows) ── */
+    .content-block {
+        padding: 20px 0 40px;
+    }
+
+    .content-block h1 {
+        font-size: 44px;
+        font-weight: 800;
+        color: #222;
+        line-height: 1.25;
+        margin-bottom: 22px;
+    }
+
+    .content-block p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 28px;
+        line-height: 1.75;
+        max-width: 700px;
+    }
+
+    .content-block button,
+    .pill-btn {
+        display: inline-block;
+        background: #e21b70;
+        color: #fff;
+        border: none;
+        padding: 14px 36px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background .2s, transform .2s;
+        text-decoration: none;
+    }
+
+    .content-block button:hover,
+    .pill-btn:hover {
+        background: #c4105c;
+        transform: translateY(-2px);
+    }
+
+    /* ── APP STORE BADGES ── */
+    .app-badges {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin: 10px 0 40px;
+    }
+
+    .app-badges img {
+        width: 160px !important;
+        height: auto !important;
+        border-radius: 10px !important;
+        margin: 0 !important;
+        display: inline-block !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+        transition: transform .2s;
+    }
+
+    .app-badges img:hover {
+        transform: translateY(-3px);
+    }
+
+    /* ── NEWS SECTION ── */
+    .news-section {
+        padding: 60px 0 20px;
+    }
+
+    .news-section>.container>h1 {
+        font-size: 44px;
+        font-weight: 800;
+        color: #222;
+        margin-bottom: 12px;
+    }
+
+    .news-section>.container>p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 40px;
+    }
+
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+
+    .news-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: transform .25s, box-shadow .25s;
+    }
+
+    .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.13);
+    }
+
+    .news-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 0;
+        margin: 0;
+        display: block;
+    }
+
+    .news-card-body {
+        padding: 20px;
+    }
+
+    .news-tag {
+        display: inline-block;
+        background: #fde8f2;
+        color: #e21b70;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .news-card-body p {
+        font-size: 15px;
+        color: #333;
+        font-weight: 600;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* ── CORPORATE (feed your team) SECTION ── */
+    .corporate-section {
+        background: #fff5f9;
+        margin-top: 80px;
+        padding: 80px 0;
+        border-top: 1px solid #fde0ec;
+    }
+
+    .corporate-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .corporate-inner h1 {
+        font-size: 44px;
+        font-weight: 800;
+        color: #222;
+        margin-bottom: 20px;
+    }
+
+    .corporate-inner p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 30px;
+        line-height: 1.75;
+    }
+
+    .corporate-inner img {
+        width: 100%;
+        border-radius: 20px;
+        display: block;
+        margin: 0;
+        box-shadow: 0 8px 30px rgba(226, 27, 112, 0.12);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+        background: #1a1a1a;
+        margin-top: 0;
+        padding: 70px 60px 0;
+        color: #aaa;
+    }
+
+    .footer-inner {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    footer .logo img {
+        width: 160px;
+        margin-bottom: 18px;
+        filter: brightness(0) invert(1);
+    }
+
+    footer .tagline {
+        font-size: 14px;
+        color: #888;
+        line-height: 1.7;
+    }
+
+    .footer-col h3 {
+        font-size: 13px;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 18px;
+    }
+
+    footer ul {
+        list-style: none;
+    }
+
+    footer li {
+        margin: 10px 0;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: #888;
+        font-size: 14px;
+        transition: color .2s;
+    }
+
+    footer a:hover {
+        color: #e21b70;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 12px;
+        margin-top: 6px;
+    }
+
+    .social-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #aaa;
+        text-decoration: none;
+        transition: background .2s, color .2s;
+    }
+
+    .social-icon:hover {
+        background: #e21b70;
+        color: #fff;
+    }
+
+    .footer-bottom {
+        padding: 22px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-bottom span {
+        font-size: 13px;
+        color: #555;
+    }
+
+    .footer-bottom a {
+        color: #555;
+        font-size: 13px;
+    }
+
+    .footer-bottom a:hover {
+        color: #e21b70;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+        .news-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .corporate-inner {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 14px 20px;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .hero-headline {
+            left: 24px;
+            font-size: 46px;
+            max-width: 90%;
+        }
+
+        .container {
+            padding: 0 24px;
+        }
+
+        .intro-section h1,
+        .content-block h1,
+        .news-section>.container>h1,
+        .corporate-inner h1 {
+            font-size: 30px;
+        }
+
+        .news-grid {
+            grid-template-columns: 1fr;
+        }
+
+        footer {
+            padding: 50px 24px 0;
+        }
+
+        .footer-inner {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+        }
+    }
+</style>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="https://www.foodpanda.com/wp-content/uploads/2023/06/foodpanda_logo_2023.svg"
+                alt="foodpanda logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Newsroom</a></li>
+                <li><a href="">Partners</a></li>
+                <li><a href="">Panda Ada</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Careers</a></li>
+                <li><button>Choose a location</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO VIDEO -->
+    <div class="hero-video-wrap">
+        <h1 class="hero-headline">food<br>and groceries<br>in a tap</h1>
+        <video autoplay muted loop playsinline>
+            <source src="0b3d5973-cb65627b.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <main>
+
+        <!-- INTRO -->
+        <section class="intro-section">
+            <div class="container">
+                <h1>We're here to help you live life the panda way.<br>
+                    Spend more time doing what you love — we'll take care of tasty meals, fresh groceries and new
+                    flavours.</h1>
+            </div>
+        </section>
+
+        <img class="full-img" src="https://www.foodpanda.com/wp-content/uploads/2025/07/fp-home-768x432.webp"
+            alt="foodpanda">
+
+        <!-- NEXT GEN DELIVERY -->
+        <section class="content-block">
+            <div class="container">
+                <h1>Meet the next generation of delivery!</h1>
+                <p>What makes quick commerce quick? We stand for swift personalised delivery solutions for our
+                    customers, partners and employees. Learn how we empower authentic lifestyles and drive innovation
+                    across the globe.</p>
+                <button>About</button>
+            </div>
+        </section>
+
+        <!-- TASTE THE CONVENIENCE -->
+        <section class="content-block">
+            <div class="container">
+                <h1>Taste the convenience.</h1>
+                <p>Try us out! Delicious food and speedy groceries are at your fingertips. Go ahead, download foodpanda
+                    now.</p>
+                <div class="app-badges">
+                    <img src="https://www.foodpanda.com/wp-content/uploads/2023/02/app-apple.png"
+                        alt="Download on App Store">
+                    <img src="https://www.foodpanda.com/wp-content/uploads/2023/02/app-google.png"
+                        alt="Get it on Google Play">
+                    <img src="https://www.foodpanda.com/wp-content/uploads/2023/02/app-huawei.png"
+                        alt="Huawei AppGallery">
+                </div>
+            </div>
+        </section>
+
+        <img class="full-img" src="https://www.foodpanda.com/wp-content/uploads/2025/07/foodpanda-home-2-768x432.webp"
+            alt="foodpanda app">
+        <img class="full-img" src="https://www.foodpanda.com/wp-content/uploads/2025/07/fp-home-3-768x512.webp"
+            alt="foodpanda delivery">
+
+        <!-- CAREERS -->
+        <section class="content-block">
+            <div class="container">
+                <h1>Find the job you'd love</h1>
+                <p>Hungry to make a difference? There's a seat at our table!<br><br>
+                    Find out how we connect tech, passions, projects and people – explore international career
+                    opportunities at foodpanda.</p>
+                <button>Join us!</button>
+            </div>
+        </section>
+
+        <!-- NEWS -->
+        <section class="news-section">
+            <div class="container">
+                <h1>Have you heard?</h1>
+                <p>The industry is changing fast! Stay up to date with foodpanda press. Catch up on the latest news,
+                    updates and reports here.</p>
+
+                <div class="news-grid">
+                    <div class="news-card">
+                        <img src="https://www.foodpanda.com/wp-content/uploads/2026/01/Key-Visual-Axelle-Guibert-Director-of-Quick-Commerce-Left-Bhavani-Mishra-Managing-Director-of-foodpanda-Singapore-Right-1.jpg"
+                            alt="news">
+                        <div class="news-card-body">
+                            <span class="news-tag">Press Release</span>
+                            <p>foodpanda boosts bigger grocery runs with new, upsized pandamart stores</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="https://www.foodpanda.com/wp-content/uploads/2026/01/Key-Visual-Axelle-Guibert-Director-of-Quick-Commerce-Left-Bhavani-Mishra-Managing-Director-of-foodpanda-Singapore-Right-1.jpg"
+                            alt="news">
+                        <div class="news-card-body">
+                            <span class="news-tag">Merchants</span>
+                            <p>foodpanda strengthens merchant care with record onboarding milestone in Asia</p>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <img src="https://www.foodpanda.com/wp-content/uploads/2026/01/Key-Visual-Axelle-Guibert-Director-of-Quick-Commerce-Left-Bhavani-Mishra-Managing-Director-of-foodpanda-Singapore-Right-1.jpg"
+                            alt="news">
+                        <div class="news-card-body">
+                            <span class="news-tag">Press Release</span>
+                            <p>foodpanda expands panda hearts programme, reports 30% drop in rider accidents across Asia
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CORPORATE -->
+        <section class="corporate-section">
+            <div class="container">
+                <div class="corporate-inner">
+                    <div>
+                        <h1>Feed your team.</h1>
+                        <p>Treat your talented team to their favourite meals. Let them pick! Explore flexible corporate
+                            food delivery options and tasty employee perks.</p>
+                        <button>Explore</button>
+                    </div>
+                    <div>
+                        <img src="https://www.foodpanda.com/wp-content/uploads/2025/07/foodpanda-home-4.webp"
+                            alt="corporate food delivery">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <div class="logo">
+                    <img src="https://www.foodpanda.com/wp-content/uploads/2023/06/foodpanda_logo_2023.svg"
+                        alt="foodpanda logo">
+                </div>
+                <p class="tagline">food and more, delivered.<br>Online food and grocery delivery.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Navigate</h3>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Newsroom</a></li>
+                    <li><a href="">Partners</a></li>
+                    <li><a href="">Panda Ada</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Collaborate</h3>
+                <ul>
+                    <li><a href="">Explore careers</a></li>
+                    <li><a href="">Become a rider</a></li>
+                    <li><a href="">Feed your team</a></li>
+                </ul>
+
+                <h3 style="margin-top: 30px;">Follow us on</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/foodpanda" class="social-icon" title="Facebook">f</a>
+                    <a href="https://www.linkedin.com/company/foodpanda" class="social-icon" title="LinkedIn">in</a>
+                    <a href="https://www.instagram.com/foodpandasg" class="social-icon" title="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>Copyright &copy; 2026 foodpanda</span>
+            <a href="">Privacy Policy</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

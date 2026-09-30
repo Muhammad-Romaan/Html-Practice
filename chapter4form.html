@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Page Styling */
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    /* Form Container */
+    form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+
+    /* Heading */
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    /* Labels */
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    /* Inputs, Select & Textarea */
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    /* Focus Effect */
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+    }
+
+    /* Radio Buttons */
+    input[type="radio"] {
+        width: auto;
+        margin-right: 5px;
+    }
+
+    /* Checkbox */
+    input[type="checkbox"] {
+        width: auto;
+        margin-right: 5px;
+    }
+
+    /* Textarea */
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    /* Button */
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #357abd;
+    }
+
+    /* Subscription Section */
+    p {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #555;
+    }
+</style>
+
+<body>
+    <form action="/submit.php">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+        </div>
+        <br>
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+        </div>
+        <br>
+        <div>
+            <label for="dob">Date Of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <br>
+        <div>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <p>Subscription Plan</p>
+            <input type="radio" id="basic" name="subscription" value="basic" required>
+            <label for="basic">Basic</label>
+            <input type="radio" id="premium" name="subscription" value="premium" required>
+            <label for="premium">Premium</label>
+            <input type="radio" id="vip" name="subscription" value="vip" required>
+            <label for="vip">VIP</label>
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" id="checkbox" name="checkbox" required>
+            <label for="checkbox">Accept Terms And Conditions</label>
+        </div>
+        <br>
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Enter Your Message" required></textarea>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>

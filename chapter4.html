@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists</title>
+</head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        margin: 20px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    thead {
+        background: #2563eb;
+        color: white;
+    }
+
+    thead th {
+        padding: 15px;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    tbody td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f8fafc;
+    }
+
+    tbody tr:hover {
+        background-color: #e0f2fe;
+        transition: 0.3s ease;
+        cursor: pointer;
+    }
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Page Styling */
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    /* Form Container */
+    form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+
+    /* Heading */
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    /* Labels */
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    /* Inputs, Select & Textarea */
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    /* Focus Effect */
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+    }
+
+    /* Radio Buttons */
+    input[type="radio"] {
+        width: auto;
+        margin-right: 5px;
+    }
+
+    /* Checkbox */
+    input[type="checkbox"] {
+        width: auto;
+        margin-right: 5px;
+    }
+
+    /* Textarea */
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    /* Button */
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #357abd;
+    }
+
+    /* Subscription Section */
+    p {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #555;
+    }
+</style>
+
+<body>
+    <h1>Lists Table Form In HTML</h1>
+
+    <h2>My best food and drink using coading</h2>
+    <ol>
+        <li>BBQ</li>
+        <li>Zinger Burger</li>
+        <li>Cola Next</li>
+        <li>Mango Shake</li>
+    </ol>
+
+    <h2>My favorite fruits</h2>
+    <ul>
+        <li>Mango</li>
+        <li>Watermelon</li>
+        <li>Banana</li>
+        <li>Apple</li>
+        <li>Pineapple</li>
+    </ul>
+
+    <h2>Programming Languages</h2>
+    <dl>
+        <dt>HTML</dt>
+        <dd>HTML (HyperText Markup Language) is the standard coding language used to structure and display content on
+            the web.</dd>
+        <dt>CSS</dt>
+        <dd>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation, formatting, and
+            layout of a document written in a markup language like HTML.</dd>
+        <dt>JS</dt>
+        <dd>JavaScript is a lightweight, interpreted programming language used to make web pages interactive and
+            dynamic.</dd>
+    </dl>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Company Name</th>
+                <th>Role</th>
+                <th>Sallery</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Roman</td>
+                <td>18</td>
+                <td>Seo Growth Zone</td>
+                <td>Frontend Developer</td>
+                <td>22000</td>
+            </tr>
+            <tr>
+                <td>Sufiyan</td>
+                <td>21</td>
+                <td>Seo Growth Zone</td>
+                <td>Manually Written Comment</td>
+                <td>25000</td>
+            </tr>
+            <tr>
+                <td>Asad</td>
+                <td>17</td>
+                <td>Seo Growth Zone</td>
+                <td>Manage ID</td>
+                <td>18000</td>
+            </tr>
+            <tr>
+                <td>Rafay</td>
+                <td>14</td>
+                <td>Seo Growth Zone</td>
+                <td>Run ID</td>
+                <td>15000</td>
+            </tr>
+            <tr>
+                <td>Owais</td>
+                <td>28</td>
+                <td>Seo Growth Zone</td>
+                <td>Your ID Owner</td>
+                <td>25000</td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    Submit Your Data
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Form</h1>
+    <form action="/submit.php">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+        </div>
+        <br>
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+        </div>
+        <br>
+        <div>
+            <label for="dob">Date Of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <br>
+        <div>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <p>Subscription Plan</p>
+            <input type="radio" id="basic" name="subscription" value="basic" required>
+            <label for="basic">Basic</label>
+            <input type="radio" id="premium" name="subscription" value="premium" required>
+            <label for="premium">Premium</label>
+            <input type="radio" id="vip" name="subscription" value="vip" required>
+            <label for="vip">VIP</label>
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" id="checkbox" name="checkbox" required>
+            <label for="checkbox">Accept Terms And Conditions</label>
+        </div>
+        <br>
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Enter Your Message" required></textarea>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>
